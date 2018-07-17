@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content=""/>
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pengaduan - HMJIF Website</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Faster+One|Source+Sans+Pro:700" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="navigation navbar navbar-expand-lg navbar-dark py-4">
+
+	<nav class="container-fluid">
+	<a href="index.html" class="navigation__logo navbar-brand font-weight-bold">HMJIF UNLA</a>
+	
+	<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggle">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="navbar-collapse collapse justify-content-end" id="navbarToggle">
+		<ul class="navigation__menu navbar-nav">
+			<li class="px-2 nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+			<li class="px-2 nav-item"><a href="#" class="nav-link">ABOUT</a></li>
+			<li class="px-2 nav-item"><a href="#" class="nav-link">STRUKTUR</a></li>
+			<li class="px-2 nav-item"><a href="#" class="nav-link">BLOG</a></li>
+			<li class="px-2 nav-item"><a href="#" class="nav-link">JADWAL KULIAH</a></li>
+			<li class="px-2 nav-item"><a href="#" class="nav-link">INFO</a></li>
+			<li class="px-2 nav-item"><a href="#" class="nav-link">EVENT / SEMINAR</a></li>
+			<li class="px-2 nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle active" role="button" data-toggle="dropdown" id="navbarDropdown" >SUARA MAHASISWA</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<h3 class="dropdown-header text-light">ASPIRASI ANDA</h3>
+					<div class="dropdown-divider"></div>
+					<a href="pengaduan.html" class="text-light dropdown-item active">PENGADUAN</a>
+					<a href="aspirasi.html" class="text-light dropdown-item">ASPIRASI</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	</nav>
+</div>
+<!-- end Navigation -->
+
+<div class="awal section">
+	<div class="container">
+		<div class="w-75 mx-auto text-center">
+			<h2 class="section__header awal__header">PENGADUAN MAHASISWA</h2>
+		</div>
+	</div>
+</div>
+
+<div class="pengaduan section py-5">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-6 pengaduan__desc">
+				<h2>Kamu Punya Masalah sama Perkuliahan ?</h2>
+				<p class="lead">Entah apa masalah kamu, ga punya tempat curhat. <span>Sok atuh mangga</span> curahkan aja disini. Si kami siap membantu.</p>
+				<p class="pengaduan__notice">Tenang aja Privacy Kamu Terjaga Kok.</p>
+			</div>
+			<div class="col-6 pengaduan__form">
+				<form action="" method="post">
+					<div class="form-group">
+					    <label class="sr-only">NPM</label>
+					    <input type="text" class="form-control" name="npm" placeholder="NPM Kamu">
+					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+					<div class="form-group">
+					    <label class="sr-only">Nama</label>
+					    <input type="password" class="form-control" placeholder="Nama Lengkap Kamu">
+					</div>
+					<div class="form-group">
+					    <label class="sr-only">Tahun Angkatan</label>
+						<select name="tahun" class="form-control">
+							<option value="">--Pilih Tahun Angkatan--</option>
+							<option value="">2018</option>
+							<option value="">2017</option>
+							<option value="">2016</option>
+							<option value="">2015</option>
+							<option value="">2014</option>
+						</select>
+					</div>
+				    <div class="form-group">
+					    <label class="sr-only">Email address</label>
+					    <input type="email" class="form-control" placeholder="Email Kamu">
+					</div>
+
+					<div class="form-group">
+						<label class="sr-only">Example textarea</label>
+						<textarea class="form-control" rows="6" placeholder="Masalah Kamu"></textarea>
+					</div>
+
+				    <button type="submit" class="pengaduan__btn section__btn">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>

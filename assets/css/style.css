@@ -1,0 +1,167 @@
+html, body{
+	font-family: "Source Sans Pro", roboto, sans-serif;
+}
+/*.navbar{
+	font-family: "Source Sans Pro";
+}
+*/
+p, form{
+	font-family: roboto;
+}
+.navbar .navbar-brand{
+	font-family: "Faster One"
+}
+
+.navigation{
+	background: #00b0ff !important;
+}
+
+.dropdown-menu{
+	background: #33bfff;
+}
+
+.section{
+	padding-top: 5em;
+}
+
+.section__desc{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.section__btn{
+	color: #00b0ff;
+	background: white;
+	border: 1px solid #00b0ff;
+	padding: 10px;
+	cursor: pointer;
+	transition: background .5s ease-in-out, color .2s ease-in;
+}
+
+.section__header{
+	font-size: 2.3em;
+}
+
+/* welcome */
+.welcome{
+	background: url(../images/bg.jpeg) no-repeat; 
+	background-size: cover;
+	height: 90vh;
+	color: white;
+	position: relative;
+}
+
+.welcome__overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+blockquote{
+	position:relative;
+}
+
+blockquote::before{
+	content: "";
+	background-color: #d9d9d9;
+	width: 100px;
+	height: auto;
+	padding-right: 2em;
+	position: absolute;
+	left: 0; top: 0;
+}
+@media(max-width: 992px){
+	.welcome__header{font-size: 25px;}
+	.welcome__par{font-size: 16px;}
+}
+@media(max-width: 576px){
+	.welcome{text-align: center; }
+	.welcome__header{padding-top: 5em}
+	.welcome__par{width: 100% !important; }
+}
+/* end welcome */
+
+/* blog */
+.blog__btn{
+	color: #00b0ff;
+	background: white;
+	/*transition: background .5s ease-in-out, color .2s ease-in;*/
+}
+
+.blog__btn:hover{
+	color: white;
+	background: #00b0ff;
+}
+
+@media (max-width: 768px){
+	.blog__btn{font-size: 14px}
+}
+/* end blog */
+
+/* subcribe */
+.subscribe{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b0ff+0,33bfff+100 */
+	background: #00b0ff; /* Old browsers */
+	background: -moz-linear-gradient(top, #00b0ff 0%, #33bfff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #00b0ff 0%,#33bfff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #00b0ff 0%,#33bfff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b0ff', endColorstr='#33bfff',GradientType=0 ); /* IE6-9 */*/
+}
+
+.subscribe__header{
+	color: white;
+}
+
+/*.subscribe*/
+.subscribe__btn{
+	width: 15em;
+	padding: 1em 0;
+	font-size: 1.85em;
+}
+.subscribe__btn:hover{
+	color: white;
+	background: transparent;
+	border: none;
+}
+/* end subcribe */
+
+/* awal */
+.awal{
+	background: url(images/bg2.jpeg) no-repeat center center;
+	color: white;
+	height: 35vh;
+}
+
+.awal__header{
+	background-color: #00b0ff;
+	padding-top: .2em;
+	padding-bottom: .2em;
+}
+/* end awal */
+
+
+/* pengaduan */
+.pengaduan p span{color: #00b0ff; font-weight: bold}
+.pengaduan p{padding: 1em 0;}
+.pengaduan__notice{
+	color: #00b0ff;
+	font-size: 2em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	font-weight: bolder;
+}
+
+.pengaduan form input,
+.pengaduan form textarea,
+.pengaduan form select{
+	border:1px solid #00b0ff;
+}
+
+.form-group{margin-bottom: 2em}
+
+.pengaduan__btn{width: 100%; text-transform: uppercase; font-weight: bold}
+.pengaduan__btn:hover{color: white; background: #00b0ff}
+/* end pengaduan*/

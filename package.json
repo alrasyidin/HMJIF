@@ -1,0 +1,14 @@
+{
+  "name": "HMJIF_WEBSITE",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Hamstergeek",
+  "license": "MIT",
+  "devDependencies": {
+  	"gulp": "latest",
+  	"browser-sync": "latest",
+  	"gulp-concat":"latest",
+  	"gulp-uglify": "latest",
+  	"gulp-autoprefixer": "latest"
+  }
+}
