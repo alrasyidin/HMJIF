@@ -88,11 +88,11 @@ include_once ROOT_PATH . "admin/template/header.php";
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
-                                <tr><th>No</th><th>Judul</th><th>Views</th><th>Isi</th><th>Published</th><th>Tanggal Dibuat</th></tr>
+                                <tr><th>No</th><th>Judul</th><th>Views</th><th>Artikel</th><th>Published</th><th>Tanggal Dibuat</th><th>Action</th></tr>
                             </thead>
                             <tbody>
                                 <?php  
-                                $data = array("judul", "views", "isi", "published", "tgl_dibuat");
+                                $data = array("id", "judul", "views", "isi", "published", "tgl_dibuat");
                                 $row = getUserData($data);
                                 $no = 0; $i = 1;
                                 while ($no < count($row)) {
@@ -101,9 +101,10 @@ include_once ROOT_PATH . "admin/template/header.php";
                                     <td><?= $i ?></td>
                                     <td><?= $row[$no]["judul"]; ?></td>
                                     <td><?= $row[$no]["views"]; ?></td>
-                                    <td><a href="#"><?= ambilKata($row[$no]["isi"], 2); ?>...</a></td>
+                                    <td><a href="#"><?= substr($row[$no]["isi"],0,125); ?></a></td>
                                     <td><?= $row[$no]["published"]; ?></td>
                                     <td><?= $row[$no]["tgl_dibuat"]; ?></td>
+                                    <td><a href="blog_delete.php?id=<?= $row[$no]['id']; ?>" class="badge badge-danger">DELETE</a> <a href="blog_update.php?id=<?= $row[$no]['id']; ?>" class="badge badge-warning">UPDATE</a></td>
                                 </tr>                            
                                 <?php $no++; $i++; } ?>
                             </tbody>

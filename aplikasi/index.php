@@ -4,34 +4,33 @@ if(!isset($_GET["p"])){
 	$_GET["p"] = "home";
 }
 include_once "../core/init.php";
-include_once ROOT_PATH . "/template/header.php";
-// echo ROOT_PATH . '/assets/css/style.css';
+include_once ROOT_PATH . "template/header.php";
 
 switch ($_GET["p"]) {
 	case "home":
-		include "home.php";
+		include_once "home.php";
 		break;
 	// case "about":
-	// 	include "about.php";
+	// 	include_once "about.php";
 	// 	break;
 	// case "struktur":
-	// 	include "struktur.php";
+	// 	include_once "struktur.php";
 	// 	break;
-	// case "blog":
-	// 	include "blog.php";
-	// 	break;
-	// case "blog":
-	// 	include "blog.php";
-	// 	break;
+	case "blog":
+		include_once "blog.php";
+		break;
+	case "blog_detail":
+		include_once "blog_detail.php";
+		break;
 	// case "jadwal":
-	// 	include "jadwal.php";
+	// 	include_once "jadwal.php";
 	// 	break;
 	// case "info":
-	// 	include 'info.php';
+	// 	include_once 'info.php';
 	// default:
-	// 	include '404.php';
+	// 	include_once '404.php';
 	// 	break;
 }
 
-include_once ROOT_PATH . "/template/footer.php";
+include_once ROOT_PATH . "template/footer.php";
 ?>

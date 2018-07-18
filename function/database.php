@@ -1,5 +1,4 @@
 <?php  
-
 function escapeString(&$data){
 	global $db;
 
@@ -40,6 +39,7 @@ function getUserData($data = array(), $klausa = "", $table = "post"){
 		$data = array_values($data);
 		$fields = implode($data, "`, `");
 	}
+	// echo "SELECT `$fields` FROM `$table` $klausa";
 	return mysqli_fetch_all( mysqli_query($db, "SELECT `$fields` FROM `$table` $klausa"), MYSQLI_ASSOC );
 }
 
@@ -66,5 +66,23 @@ function insertData($data = array(), $table = "post"){
 	
 	$hasil = mysqli_query($db, "INSERT INTO `$table` ($fields) VALUES ($kolom)");
 	return $hasil;
+}
+
+function deleteData($id){
+	global $db;
+	escapeString($id);
+	return mysqli_query($db, "DELETE FROM post WHERE id = '$id'");
+}
+
+function updateData($data = array(), $klausa = "", $table = "post"){
+	global $db;
+	escapeString($data);
+
+	if(isset($data["image"])){
+		return mysqli_query($db, "UPDATE `$table` SET judul = '$data[judul]', slug = '$data[slug]', image = '$data[image]', published = '$data[published]', isi = '$data[isi]' WHERE id = $data[id]");
+	} else {
+		echo "yang disini";
+		return mysqli_query($db, "UPDATE `$table` SET judul = '$data[judul]', slug = '$data[slug]', published = '$data[published]', isi = '$data[isi]' WHERE id = $data[id]");
+	}
 }
 ?>

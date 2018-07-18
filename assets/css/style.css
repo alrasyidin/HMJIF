@@ -8,6 +8,8 @@ html, body{
 p, form{
 	font-family: roboto;
 }
+
+
 .navbar .navbar-brand{
 	font-family: "Faster One"
 }
@@ -41,6 +43,15 @@ p, form{
 .section__header{
 	font-size: 2.3em;
 }
+
+.section__info{padding-top: 2em;}
+
+.section__overlay, .section__view{
+	padding: 1em 1.5em;
+	background: rgba(0,0,0,.7);
+	margin: 0 1em;
+}
+
 
 /* welcome */
 .welcome{
@@ -99,6 +110,21 @@ blockquote::before{
 @media (max-width: 768px){
 	.blog__btn{font-size: 14px}
 }
+	/* search */
+	.search .form-group{position: relative;}
+	.search__btn{
+		position: absolute;
+		top: 5%; right: 2%;
+		border: none;
+		background: none;
+		color: #00b0ff;
+		font-size: 20px;
+		cursor: pointer;
+		font-weight: bolder
+	}
+	.search__btn:focus{outline: none;}
+	/* end search */
+
 /* end blog */
 
 /* subcribe */
@@ -130,7 +156,7 @@ blockquote::before{
 
 /* awal */
 .awal{
-	background: url(images/bg2.jpeg) no-repeat center center;
+	background: url(../images/bg2.jpeg) no-repeat center center;
 	color: white;
 	height: 35vh;
 }
@@ -140,6 +166,19 @@ blockquote::before{
 	padding-top: .2em;
 	padding-bottom: .2em;
 }
+
+.awal--blog{
+	height: 60vh;
+}
+
+.awal--blog .awal__header{background: rgba(0,0,0,.5); padding-top: 2vh}
+.awal--blog .awal__header + p{font-size: 20px; font-weight: 500}
+/*.awal--blog::after{
+	content: "";
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+
+}*/
 /* end awal */
 
 
@@ -165,3 +204,5 @@ blockquote::before{
 .pengaduan__btn{width: 100%; text-transform: uppercase; font-weight: bold}
 .pengaduan__btn:hover{color: white; background: #00b0ff}
 /* end pengaduan*/
+
+/*  */

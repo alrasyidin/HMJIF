@@ -1,15 +1,4 @@
-<?php  
-include_once ROOT_PATH . "/core/init.php";
-
-try {
-	$posts = getPublishedPost();
-} catch (Exception $e) {
-	echo $e->getMessage();
-}
-?>
-
-<!-- welcome -->
-<!-- welcome ini berisi headline WEBSITE HMJIF nanti dikemabangkan menggunakan carousel atau slider -->
+<!-- welcome --><!-- welcome ini berisi headline WEBSITE HMJIF nanti dikemabangkan menggunakan carousel atau slider -->
 <div class="welcome section">
 	<div class="welcome__overlay">
 	<div class="container-fluid py-5">
@@ -77,7 +66,9 @@ try {
 	
 	<div class="row blog__list">
 		<!-- list blog yang ada di database -->
-		<?php foreach ($posts as $post) { ?>
+		<?php 
+		$posts = getPublishedPost();
+		foreach ($posts as $post) { ?>
 		<div class="col-xl-4 col-md-6 pt-5">
 			<div class="card">
 				<img src="<?= BASE_URL . "images/" . $post["image"]; ?>" class="card-img-top">

@@ -16,21 +16,23 @@ if($_POST){
         $published = $_POST["published"];
         $artikel = $_POST["artikel"];
 
-        if (isset($_FILES)) {
+        // print_r($_FILES);
+        if (isset($_FILES) && !empty($_FILES["gambar"]["name"])) {
     		$image = $_FILES; // berisi array informasi berupa image yang mau di upload
             // print_r($image);
 
             if(uploadImage($image, $error)){
-                $insertData = array(
-                    "judul" => addslashes($judul),
+                $updateData = array(
+                    "id"  => $_GET["id"],
+                    "judul" => $judul,
                     "slug" => $slug,
                     "image" => $image["gambar"]["name"],
                     "published" => $published,
                     "isi" => $artikel
                 );
 
-                if(insertData($insertData)){
-                    echo "berhasil";
+                if(updateData($updateData)){
+                    header("Location:blog.php?berhasild=".$_GET['id']);
                 }
             }else {
                 echo "gagal";
@@ -38,14 +40,16 @@ if($_POST){
                 print_r($error);
             }
         } else {
-            $insertData = array(
+            $updateData = array(
+                "id" => $_GET['id'],
                 "judul" => addslashes($judul),
                 "slug" => $slug,
                 "published" => $published,
                 "isi" => $artikel
             );
-            if(insertData($insertData)){
-                echo "berhasil";
+
+            if(updateData($updateData)){
+                header("Location:blog.php?berhasile=".$_GET['id']);
             }
         }
 	}
@@ -119,24 +123,28 @@ include_once ROOT_PATH . "admin/template/header.php";
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Add Article</h1>
+                <h1 class="page-header">Update Article</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
+        <?php
+        $id = isset($_GET["id"]) ? $_GET["id"] : "";
+        $data = array("judul", "image", "isi");
+        $row = getUserData($data, "WHERE id = '$id' LIMIT 1");
+        ?>
         <div class="row section">
             <div class="col-lg-12">
 				<form role="form" method="post" action="" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Judul</label>
-                        <input class="form-control" name="judul" required>
+                        <input class="form-control" name="judul" value="<?= $row[0]['judul']; ?>" required>
                         <small class="form-text text-muted"></small>
                     </div>
                     
                     <div class="form-group ">
                         <label>Masukkan Gambar</label>
-                        <input type="file" name="gambar" required>
+                        <input type="file" name="gambar">
                     </div>
 
                     <div class="form-group">
@@ -151,9 +159,9 @@ include_once ROOT_PATH . "admin/template/header.php";
 
                     <div class="form-group">
                         <label>Artikel</label>
-                        <textarea class="form-control" rows="3" name="artikel" placeholder="Ketikkan artikela anda disini"></textarea>
+                        <textarea class="form-control" rows="3" name="artikel" placeholder="Ketikkan artikela anda disini"><?= $row[0]["isi"]; ?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success" name="add"><i class="fa fa-comments"></i> Add Article</button>
+                    <button type="submit" class="btn btn-success" name="add"><i class="fa fa-pencil"></i>  Update Article</button>
                 </form>
             </div>
         </div>

@@ -29,6 +29,11 @@
     <style>
         .add{padding: 1em 0 3em;}
         .section{padding: 2em 0 5em;}
+        /* apa aja */
+        .badge{display: inline-block !important;}
+        .badge-danger{background: rgba(255,0,0,.6);}
+        .badge-warning{background: rgba(255,255,0,.8);}
+        /* end apa aja */
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
