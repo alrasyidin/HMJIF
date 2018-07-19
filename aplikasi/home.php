@@ -71,7 +71,7 @@
 		foreach ($posts as $post) { ?>
 		<div class="col-xl-4 col-md-6 pt-5">
 			<div class="card">
-				<img src="<?= BASE_URL . "images/" . $post["image"]; ?>" class="card-img-top">
+				<img src="<?=  "../upload/" . $post["image"]; ?>" class="card-img-top">
 				<div class="card-body">
 					<h3 class="card-title"><?= $post["judul"]; ?></h3>
 					<time><?= date("F j, Y" ,strtotime($post["tgl_dibuat"])); ?></time>

@@ -10,14 +10,27 @@
 <div class="section search">
 	<div class="container">
 		<div class="w-50 mx-auto">
-			<form>
+			<form method="post" action="?p=blog" >
 				<div class="form-group">
 					<label class="sr-only"></label>
 					<input type="text" name="search" placeholder="Search Here" class="form-control w-100">
-					<button type="submit" name="searchbtn" class="search__btn"><i class="fa fa-search"></i></button>
+					<div>
+						<input type="submit" name="searchbtn"  value="Search!" class="search__btn" />
+					</div>
 				</div>
 			</form>
 		</div>
+
+		<?php
+
+		$search = isset($_POST["search"]) ? $_POST["search"] : "";
+		if(isset($_POST['searchbtn'])){
+			echo "The text you searching \"<b>". $search . "</b>\"";
+			if(empty($_POST["searchbtn"])) {
+				echo "The field input cannot empty, try again";
+			}
+		}
+		?>
 	</div>
 </div>
 
@@ -34,7 +47,18 @@
 	<div class="row blog__list">
 		<!-- list blog yang ada di database -->
 		<?php 
-		$posts = getPublishedPost();
+		$posts = null;
+		if(isset($_POST['searchbtn'])){
+			$search = "%" . $search . "%";
+			$posts = getPublishedPost("AND judul LIKE '$search'");
+		} else{
+			$posts = getPublishedPost();
+		}
+
+		if($posts->num_rows === 0){
+			echo "Tidak ada data yang dapat ditampilkan coba cari lagi";
+		} else {
+
 		foreach ($posts as $post) { ?>
 		<div class="col-xl-4 col-md-6 pt-5">
 			<div class="card">
@@ -55,7 +79,9 @@
 				</div>
 			</div>
 		</div>
-		<?php } ?>
+		<?php } 
+		}
+		?>
 	</div>
 </div>
 <!-- end blog -->

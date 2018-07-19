@@ -15,9 +15,10 @@ function implode_sql($array, $pemisah = "`, `", $awal_akhir = "`"){
 	return $awal_akhir . implode($pemisah, $array) . $awal_akhir;
 }
 
-function getPublishedPost(){
+function getPublishedPost($filter = ""){
 	global $db;
-	return mysqli_query($db, "SELECT judul, slug, views, image, isi, tgl_dibuat FROM post WHERE published=true");
+	// die("SELECT judul, slug, views, image, isi, tgl_dibuat FROM post WHERE published=true $filter");
+	return mysqli_query($db, "SELECT judul, slug, views, image, isi, tgl_dibuat FROM post WHERE published=true $filter");
 }
 
 function getData($result){
